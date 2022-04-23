@@ -1,4 +1,4 @@
-package com.letscode.accountmicroservice.entities;
+package com.letscode.accountmicroservice.entities.client;
 
 import lombok.Data;
 

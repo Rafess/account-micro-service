@@ -2,7 +2,7 @@ package com.letscode.accountmicroservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.Getter;
+
 
 @Data
 public class AccountResponse extends AccountRequest {
@@ -16,6 +16,7 @@ public class AccountResponse extends AccountRequest {
         response.setAgency(accountRequest.getAgency());
         response.setCpf(accountRequest.getCpf());
         response.setName(accountRequest.getName());
+        response.setAccountType(accountRequest.getAccountType());
         return response;
     }
 }

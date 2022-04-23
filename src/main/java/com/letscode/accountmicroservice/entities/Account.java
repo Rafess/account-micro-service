@@ -1,10 +1,9 @@
 package com.letscode.accountmicroservice.entities;
 
+import com.letscode.accountmicroservice.entities.client.Client;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Table(name = "account")
@@ -16,6 +15,7 @@ public class Account {
     private String agency;
     @Column(name = "account_number")
     private String accountNumber;
+    // TODO juntar as colunas dos microserviços
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;

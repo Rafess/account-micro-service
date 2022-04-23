@@ -37,6 +37,10 @@
       cpf:
         validator:
           http://localhost:9080/api/cpf/status/{cpf}
+  micro:
+    client:
+      http://localhost:8081/client/{cpf}
+
   kafka:
     topic:
       name:
