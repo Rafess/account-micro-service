@@ -12,13 +12,15 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "agency")
     private String agency;
     @Column(name = "account_number")
     private String accountNumber;
-    // TODO juntar as colunas dos microserviços
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id")
     private Client client;
     @Column(name = "account_type")
     private AccountType accountType;
+
+    private String password;
 }

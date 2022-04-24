@@ -20,4 +20,21 @@ public class AccountController {
 
         return accountService.create(accountRequest);
     }
+    @DeleteMapping("/delete/{accountNumber}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public void delete(@PathVariable String accountNumber) {
+        accountService.delete(accountNumber);
+    }
+
+    @GetMapping("{accountNumber}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public AccountResponse getAccount(@PathVariable String accountNumber) {
+        return accountService.getAccount(accountNumber);
+    }
+
+    @PutMapping("update/{accountNumber}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public AccountResponse updateAccount(@PathVariable String accountNumber, @RequestBody AccountRequest accountRequest){
+        return accountService.updateAccount(accountNumber, accountRequest);
+    }
 }
